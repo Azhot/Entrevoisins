@@ -4,12 +4,12 @@ import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 
 /**
- * Event fired when a user deletes a Neighbour
+ * Event fired when a user adds a Neighbour to favorites
  */
-public class DeleteNeighbourEvent {
+public class FavoriteNeighbourEvent {
 
     /**
-     * Neighbour to delete
+     * Neighbour to see favorite status updated
      */
     public Neighbour neighbour;
 
@@ -17,8 +17,8 @@ public class DeleteNeighbourEvent {
      * Constructor.
      * @param neighbour
      */
-    public DeleteNeighbourEvent(Neighbour neighbour) {
+    public FavoriteNeighbourEvent(Neighbour neighbour) {
         this.neighbour = neighbour;
-        DI.getNeighbourApiService().deleteNeighbour(neighbour);
+        DI.getNeighbourApiService().changeFavoriteStatus(neighbour);
     }
 }

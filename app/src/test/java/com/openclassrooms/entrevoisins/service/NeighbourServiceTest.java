@@ -11,6 +11,8 @@ import org.junit.runners.JUnit4;
 
 import java.util.List;
 
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 
@@ -35,9 +37,43 @@ public class NeighbourServiceTest {
     }
 
     @Test
+    public void getFavoritesWithSuccess() {
+        List<Neighbour> neighbours = service.getNeighbours();
+        for (int i = 0; i < neighbours.size(); i++) {
+            neighbours.get(i).setFavorite(true);
+        }
+        List<Neighbour> favorites = service.getFavorites();
+        assertThat(favorites, IsIterableContainingInAnyOrder.containsInAnyOrder(neighbours.toArray()));
+    }
+
+    @Test
     public void deleteNeighbourWithSuccess() {
         Neighbour neighbourToDelete = service.getNeighbours().get(0);
         service.deleteNeighbour(neighbourToDelete);
         assertFalse(service.getNeighbours().contains(neighbourToDelete));
+    }
+
+    @Test
+    public void createNeighbourWithSuccess() {
+        Neighbour neighbourToCreate = new Neighbour(System.currentTimeMillis(), "test", "test", "test", "test", "test");
+        service.createNeighbour(neighbourToCreate);
+        assertTrue(service.getNeighbours().contains(neighbourToCreate));
+    }
+
+    @Test
+    public void getNeighbourByIdWithSuccess() {
+        List<Neighbour> neighbours = service.getNeighbours();
+        Neighbour neighbour = neighbours.get(0);
+        assertSame(neighbour, service.getNeighbourById(neighbour.getId()));
+    }
+
+    @Test
+    public void changeFavoriteStatusWithSuccess() {
+        Neighbour neighbourToChangeFavoriteStatus = service.getNeighbours().get(0);
+        neighbourToChangeFavoriteStatus.setFavorite(false);
+        service.changeFavoriteStatus(neighbourToChangeFavoriteStatus);
+        assertTrue(service.getFavorites().contains(neighbourToChangeFavoriteStatus));
+        service.changeFavoriteStatus(neighbourToChangeFavoriteStatus);
+        assertFalse(service.getFavorites().contains(neighbourToChangeFavoriteStatus));
     }
 }
