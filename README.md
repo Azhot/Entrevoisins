@@ -27,10 +27,10 @@ The project uses [AOSP Java Code Style](https://source.android.com/setup/contrib
 - [JUnit](https://junit.org/junit5/)
 
 ## Execute and compile
-You can fork this project or download the source code using the **Clone or download** button at the [root](https://github.com/Azhot/Entrevoisins) of this repository.
-I strongly recommend using [Android studio](https://developer.android.com/studio/?gclid=CjwKCAjw5Ij2BRBdEiwA0Frc9WIc9mUukU990mRNkxODmkXVdyb8vuGAx6pbti46o9x6wGwhrfl3yRoCSFIQAvD_BwE&gclsrc=aw.ds) IDE.
-Compile SDK version of the project : 28.
-Minimum SDK version of the project : 21.
+- You can fork this project or download the source code using the **Clone or download** button at the [root](https://github.com/Azhot/Entrevoisins) of this repository.
+- It's recommended using [Android studio](https://developer.android.com/studio/?gclid=CjwKCAjw5Ij2BRBdEiwA0Frc9WIc9mUukU990mRNkxODmkXVdyb8vuGAx6pbti46o9x6wGwhrfl3yRoCSFIQAvD_BwE&gclsrc=aw.ds) IDE to build, edit, compile and execute.
+- Compile SDK version of the project : 28.
+- Minimum SDK version of the project : 21.
 
 ## Credits
 Original source code : [Deyine repo](https://github.com/Deyine/OpenClassrooms/tree/master/Android/Entrevoisins).
