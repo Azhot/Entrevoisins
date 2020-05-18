@@ -11,7 +11,7 @@ This app is the third project part of the [Openclassrooms](https://openclassroom
 The project uses [AOSP Java Code Style](https://source.android.com/setup/contribute/code-style#follow-field-naming-conventions).
 
 ## Screenshots
-![Alt text](/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png?raw=true "Mipmap")
+![Alt text](/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png?raw=true "Mipmap")
 ![Alt text](/screenshots/Screenshot_20200518-115425_Entrevoisins.jpg?raw=true "Launcher activity")
 ![Alt text](/screenshots/Screenshot_20200518-115441_Entrevoisins.jpg?raw=true "Favorites tab")
 ![Alt text](/screenshots/Screenshot_20200518-115447_Entrevoisins.jpg?raw=true "Details activity")
