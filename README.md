@@ -4,9 +4,6 @@ This repository is a fork of an Android app designed to encourage and facilitate
 ## Motivation
 This app is the third project part of the [Openclassrooms](https://openclassrooms.com/) training course that I am pursuing in order to become an Android application developer.
 
-## Build status
-**Passing** 
-
 ## Code style
 The project uses [AOSP Java Code Style](https://source.android.com/setup/contribute/code-style#follow-field-naming-conventions).
 
