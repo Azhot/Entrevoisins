@@ -24,10 +24,10 @@ import butterknife.ButterKnife;
 
 public class MyFavoriteRecyclerViewAdapter extends RecyclerView.Adapter<MyFavoriteRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Neighbour> mNeighbours;
+    private final List<Neighbour> mFavoriteNeighbours;
 
     public MyFavoriteRecyclerViewAdapter(List<Neighbour> items) {
-        mNeighbours = items;
+        mFavoriteNeighbours = items;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class MyFavoriteRecyclerViewAdapter extends RecyclerView.Adapter<MyFavori
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        Neighbour neighbour = mNeighbours.get(position);
+        Neighbour neighbour = mFavoriteNeighbours.get(position);
         holder.mNeighbourName.setText(neighbour.getName());
         Glide.with(holder.mNeighbourAvatar.getContext())
                 .load(neighbour.getAvatarUrl())
@@ -58,7 +58,7 @@ public class MyFavoriteRecyclerViewAdapter extends RecyclerView.Adapter<MyFavori
 
     @Override
     public int getItemCount() {
-        return mNeighbours.size();
+        return mFavoriteNeighbours.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
