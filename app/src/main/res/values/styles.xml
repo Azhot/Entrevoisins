@@ -21,11 +21,9 @@
     <style name="AppTheme.OverlayActionBar" parent="AppTheme">
         <item name="android:actionBarStyle">@style/TransparentActionBar</item>
         <item name="android:windowActionBarOverlay">true</item>
-        <item name="android:displayOptions">showHome</item>
         <!-- Support library compatibility -->
         <item name="actionBarStyle">@style/TransparentActionBar</item>
         <item name="windowActionBarOverlay">true</item>
-        <item name="displayOptions">showHome</item>
     </style>
 
     <style name="TransparentActionBar" parent="Widget.AppCompat.Light.ActionBar.Solid">
