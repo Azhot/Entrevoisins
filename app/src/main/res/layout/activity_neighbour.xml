@@ -46,7 +46,6 @@
         android:backgroundTint="@android:color/white"
         app:srcCompat="@drawable/ic_star_grey_24dp"
         app:borderWidth="0dp"
-
         />
 
     <ScrollView
