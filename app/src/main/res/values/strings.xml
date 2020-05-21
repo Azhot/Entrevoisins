@@ -5,4 +5,9 @@
     <string name="activity_new_neighbour">New neighbour</string>
     <string name="aboutMe_title">About me</string>
     <string name="neighbour_avatar_img_description">Neighbour\'s avatar</string>
+    <string name="phone_number">Phone number</string>
+    <string name="address">Address</string>
+    <string name="about_me">About me</string>
+    <string name="save">Save</string>
+    <string name="name">Name</string>
 </resources>
