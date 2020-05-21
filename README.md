@@ -10,9 +10,9 @@ The project uses [AOSP Java Code Style](https://source.android.com/setup/contrib
 ## Screenshots
 ![Alt text](/screenshots/Screenshot_20200518-115425_Entrevoisins.jpg?raw=true "Launcher activity")
 ![Alt text](/screenshots/Screenshot_20200518-115441_Entrevoisins.jpg?raw=true "Favorites tab")
+![Alt text](/screenshots/Screenshot_20200518-115528_Entrevoisins.jpg?raw=true "Add new neighbour")
 ![Alt text](/screenshots/Screenshot_20200518-115447_Entrevoisins.jpg?raw=true "Details activity")
 ![Alt text](/screenshots/Screenshot_20200518-115505_Entrevoisins.jpg?raw=true "Favorite button clicked")
-![Alt text](/screenshots/Screenshot_20200518-115528_Entrevoisins.jpg?raw=true "Add new neighbour")
 
 ## Tech/framework used
 - [Android Support Library](https://developer.android.com/topic/libraries/support-library/)
