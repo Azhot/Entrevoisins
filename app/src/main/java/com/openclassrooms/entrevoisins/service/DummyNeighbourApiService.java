@@ -56,7 +56,6 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
      */
     @Override
     public Neighbour getNeighbourById(long id) {
-
         for (int i = 0; i < neighbours.size(); i++)
             if (neighbours.get(i).getId() == id)
                 return neighbours.get(i);
