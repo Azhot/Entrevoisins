@@ -55,7 +55,7 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
      * @param id
      */
     @Override
-    public Neighbour getNeighbourById(long id) {
+    public Neighbour getNeighbourById(long id) throws NullPointerException {
         for (int i = 0; i < neighbours.size(); i++)
             if (neighbours.get(i).getId() == id)
                 return neighbours.get(i);
