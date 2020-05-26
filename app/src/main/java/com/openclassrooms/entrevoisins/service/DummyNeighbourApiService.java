@@ -26,10 +26,12 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
      */
     @Override
     public List<Neighbour> getFavorites() {
+
         List<Neighbour> favorites = new ArrayList<>();
-        for (int i = 0; i < neighbours.size(); i++)
-            if (neighbours.get(i).isFavorite())
-                favorites.add(neighbours.get(i));
+        for (Neighbour neighbour : neighbours)
+            if (neighbour.isFavorite())
+                favorites.add(neighbour);
+
         return favorites;
     }
 
@@ -56,9 +58,10 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
      */
     @Override
     public Neighbour getNeighbourById(long id) throws NullPointerException {
-        for (int i = 0; i < neighbours.size(); i++)
-            if (neighbours.get(i).getId() == id)
-                return neighbours.get(i);
+
+        for (Neighbour neighbour : neighbours)
+            if (neighbour.getId() == id)
+                return neighbour;
 
         throw new NullPointerException("No neighbour matching the id : " + id + ".");
     }
