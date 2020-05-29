@@ -33,15 +33,18 @@ public class NeighbourFragment extends Fragment {
      * Create and return a new instance
      * @return @{@link NeighbourFragment}
      */
-    public static NeighbourFragment newInstance() {
-        return new NeighbourFragment();
+    public static NeighbourFragment newInstance(int position) {
+        NeighbourFragment neighbourFragment = new NeighbourFragment();
+        Bundle args = new Bundle();
+        args.putInt("position", position);
+        neighbourFragment.setArguments(args);
+        return neighbourFragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mApiService = DI.getNeighbourApiService();
-        mNeighbours = mApiService.getNeighbours();
     }
 
     @Override
@@ -77,16 +80,20 @@ public class NeighbourFragment extends Fragment {
      * Init the List of neighbours
      */
     private void initList() {
+
+        if (getArguments() != null) {
+            if (getArguments().getInt("position", 0) == 0) {
+                mNeighbours = mApiService.getNeighbours();
+                mRecyclerView.setContentDescription("neighbours_list"); // to ID for testing purposes
+            }
+            if (getArguments().getInt("position", 0) == 1) {
+                mNeighbours = mApiService.getFavorites();
+                mRecyclerView.setContentDescription("favorites_list"); // to ID for testing purposes
+            }
+        }
+
         if (mNeighbours != null)
             mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours));
-    }
-
-    /**
-     * Refresh the List of neighbours
-     */
-    private void refreshList() {
-        if (mRecyclerView.getAdapter() != null)
-            mRecyclerView.getAdapter().notifyDataSetChanged();
     }
 
     /**
@@ -95,6 +102,6 @@ public class NeighbourFragment extends Fragment {
      */
     @Subscribe
     public void onDeleteNeighbour(DeleteNeighbourEvent event) {
-        refreshList();
+        initList();
     }
 }

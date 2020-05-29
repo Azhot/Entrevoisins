@@ -11,6 +11,7 @@ import org.junit.runners.JUnit4;
 
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThat;
@@ -39,11 +40,12 @@ public class NeighbourServiceTest {
     @Test
     public void getFavoritesWithSuccess() {
         List<Neighbour> neighbours = service.getNeighbours();
-        for (int i = 0; i < neighbours.size(); i++) {
-            neighbours.get(i).setFavorite(true);
+        for (Neighbour neighbour : neighbours) {
+            neighbour.setFavorite(true);
         }
         List<Neighbour> favorites = service.getFavorites();
         assertThat(favorites, IsIterableContainingInAnyOrder.containsInAnyOrder(neighbours.toArray()));
+        assertEquals(favorites.size(), neighbours.size());
     }
 
     @Test
