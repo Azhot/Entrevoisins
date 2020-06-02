@@ -31,6 +31,7 @@ public class NeighbourFragment extends Fragment {
 
     /**
      * Create and return a new instance
+     *
      * @return @{@link NeighbourFragment}
      */
     public static NeighbourFragment newInstance(int position) {
@@ -85,8 +86,7 @@ public class NeighbourFragment extends Fragment {
             if (getArguments().getInt("position", 0) == 0) {
                 mNeighbours = mApiService.getNeighbours();
                 mRecyclerView.setContentDescription("neighbours_list"); // to ID for testing purposes
-            }
-            if (getArguments().getInt("position", 0) == 1) {
+            } else if (getArguments().getInt("position", 0) == 1) {
                 mNeighbours = mApiService.getFavorites();
                 mRecyclerView.setContentDescription("favorites_list"); // to ID for testing purposes
             }
@@ -98,6 +98,7 @@ public class NeighbourFragment extends Fragment {
 
     /**
      * Fired if the user clicks on a delete button
+     *
      * @param event
      */
     @Subscribe
