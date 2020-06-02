@@ -83,12 +83,12 @@ public class NeighbourFragment extends Fragment {
     private void initList() {
 
         if (getArguments() != null) {
-            if (getArguments().getInt("position", 0) == 0) {
-                mNeighbours = mApiService.getNeighbours();
-                mRecyclerView.setContentDescription("neighbours_list"); // to ID for testing purposes
-            } else if (getArguments().getInt("position", 0) == 1) {
+            if (getArguments().getInt("position", 0) == 1) {
                 mNeighbours = mApiService.getFavorites();
                 mRecyclerView.setContentDescription("favorites_list"); // to ID for testing purposes
+            } else {
+                mNeighbours = mApiService.getNeighbours();
+                mRecyclerView.setContentDescription("neighbours_list"); // to ID for testing purposes
             }
         }
 
